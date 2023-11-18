@@ -14,29 +14,38 @@ h2{
 
 h3{
     padding: 0 10px;
-    color:darkgreen;
+    color:#004080;
 }
 p {
     text-align: justify;
     font-size: 18px;
     line-height: 1.5;
     padding: 0 20px;
-    color: #004080;
+    color: #00AA00;
+}
+
+.main-page p{
+     color: #333333;
 }
 
 li{
+    /*display: inline-block;*/
+    /*list-style-position: outside;*/
     font-size: 20px;
     font-style: bold;
     line-height: 1.5;
-    padding: 0 10px;
-    color:darkgreen;
-}
-.title{
-    display: block;
-    background-color: #004080; /* 半透明的绿色 */
-    color: #00FF00;
+    color:#333333;
 }
 
+.cources{
+    padding: 0 20px;
+}
+
+.title{
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+}
 .head{
     margin: 0 auto;
     min-width: 1000px; /* 设置最小宽度为 1200px */
@@ -44,7 +53,7 @@ li{
 }
 
 .head-left {
-  flex: 0 0 48%; 
+  flex: 0 0 45%; 
   padding: 0 24px;
 }
 
@@ -62,7 +71,7 @@ li{
 }
 
 .left {
-  flex: 0 0 30%; /* 占据 25% 的固定宽度 */
+  flex: 0 0 55%; /* 占据 25% 的固定宽度 */
   padding: 0 24px;
   border-top: 2px solid #808080;
   border-right: 2px solid #808080;
@@ -79,7 +88,8 @@ li{
 }
 
 .right {
-  flex: 0 0 30%; /* 占据 12.5% 的固定宽度 */
+  /*flex: 0 0 35%;*/
+  flex: 1;
   padding: 0 24px;
   border-top: 2px solid #808080;
   border-left: 2px solid #808080;
@@ -126,13 +136,7 @@ nav {
     
 }
 
-.nav li {
-  display: inline-block;
-  margin-bottom: 10px;
-  border-right: solid;
-  border-color: white;
-  box-sizing: border-box;
-}
+
 
 .nav a {
   display: block;
@@ -142,15 +146,6 @@ nav {
   width:120px;
 }
 
-.nav li:last-child {
-  border-right: none; /* 最后一个元素不需要右边框 */
-}
-
-.submenu li {
-  border-right: none;
-  display: block;
-  
-}
 
 .submenu a {
   display: block;
@@ -171,10 +166,6 @@ nav {
   display: block;
 }*/
 
-.nav li:hover .submenu,
-.nav .submenu:hover {
-  display: block;
-}
 
 
 .terms, 
@@ -204,7 +195,7 @@ nav {
 
 
 /*---- image --------*/
-img {
+.full-width-image img {
         border: 2px solid #00FF00;
         border-radius: 15px;
 }
@@ -214,122 +205,8 @@ img {
     height: 400px; /* auto;  让高度自适应，以保持图像的原始宽高比 */
 }
 
-/*------ ebooks and web ----------*/
-.ebooks a , .web a, .data a{
-    color: #333333;
-} 
-
-.ebooks li, .web li {
-    padding: 5px 0px;
-} 
-
-
-.ebooks li{
-        list-style: none;
-        background:url(../img/book.png) no-repeat 0,-3px;
-        background-size: 20px;
-        padding-left:30px;
+.title-image {
+    width: 1000px; /* 设置图像宽度为100%，以填满父容器的宽度 */
+    height: 70px; /* auto;  让高度自适应，以保持图像的原始宽高比 */
 }
 
-.web, .data {
-    list-style-type: none;
-}
-
-#github{
-        /*list-style: none;*/
-        background:url(../img/GitHub.png) no-repeat 0,-3px;
-        background-size: 20px;
-        padding-left:30px;
-}
-
-#kaggle{
-        /*list-style: none;*/
-        background:url(../img/kagg.png) no-repeat 0,-3px;
-        background-size: 20px;
-        padding-left:30px;
-}
-
-#streamlit{
-        /*list-style: none;*/
-        background:url(../img/streamlit.ico) no-repeat 0,-3px;
-        background-size: 20px;
-        padding-left:30px;
-}
-
-#w3school{
-        /*list-style: none;*/
-        background:url(../img/w3school.ico) no-repeat 0,-3px;
-        background-size: 20px;
-        padding-left:30px;
-}
-
-.ebooks a:hover,
-.web a:hover, 
-.data a:hover {
-  color: darkblue;
-  text-decoration: underline;
-}
-
-
-/*-------news and articals ---------*/
-.news, .articles {
-  padding: 0,20px,0,0;
-}
-
-.news a, .articles a {
-  color: #333333;
-}
-
-.news li, .articles li {
-   list-style: none;
-   padding: 5px 0px;
-} 
-
-.news li{
-        list-style: none;
-        background:url(../img/news3.jpg) no-repeat 0,-3px;
-        background-size: 20px;
-        padding-left:30px;
-}
-
-.articles li{
-        list-style: none;
-        background:url(../img/dia3.png) no-repeat 0,-4px;
-        background-size: 20px;
-        padding-left:30px;
-}
-
-.news a:hover,
-.articles a:hover {
-  color: darkblue;
-  text-decoration: underline;
-}
-
-/* 定义样式类以去除右边线 */
-.remove-right-border {
-  border-right: none;
-}
-
-/* 定义样式类以去除右边线 */
-.remove-left-border {
-  border-left: none;
-}
-
-.popup {
-            display: none;
-            position: absolute;
-            width: 600px;
-            height: auto;
-            background: #f9f9f9;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-}
-.close-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            cursor: pointer;
-            color: #555;
-}
